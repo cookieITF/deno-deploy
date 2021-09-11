@@ -3,8 +3,6 @@
 import { h } from "https://x.lcas.dev/preact@10.5.12/mod.js";
 import { renderToString } from "https://x.lcas.dev/preact@10.5.12/ssr.js";
 
-import { useEffect, useState } from "https://jspm.dev/react@17.0.2";
-
 function App() {
   const date = new Date();
   return (
