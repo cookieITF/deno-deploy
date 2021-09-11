@@ -4,7 +4,6 @@ import { h } from "https://x.lcas.dev/preact@10.5.12/mod.js";
 import { renderToString } from "https://x.lcas.dev/preact@10.5.12/ssr.js";
 
 function App() {
-  const date = new Date();
   return (
     <html>
       <head>
@@ -12,9 +11,6 @@ function App() {
       </head>
       <body>
         <h1>Hello world</h1>
-        <div>
-          {date.toLocaleDateString()}
-        </div>
       </body>
     </html>
   );
