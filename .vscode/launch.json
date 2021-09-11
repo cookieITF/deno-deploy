@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Deno",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deployctl",
+      "runtimeArgs": ["run", "${file}"],
+      "port": 9229,
+      "outputCapture": "std",
+      "preLaunchTask": "deno: lint",
+      "console": "internalConsole"
+    }
+  ]
+}
