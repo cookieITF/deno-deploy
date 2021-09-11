@@ -2,16 +2,35 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Deno",
+      "name": "Deno:deno",
+      "type": "pwa-node",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "run",
+        "--inspect=127.0.0.1:9229",
+        "--allow-all"
+      ],
+      "attachSimplePort": 9229,
+      "outputCapture": "std"
+    },
+    {
+      "name": "Deno:deployctl",
       "type": "node",
       "request": "launch",
+      "program": "${file}",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "deployctl",
-      "runtimeArgs": ["run", "${file}"],
+      "runtimeArgs": [
+        "run",
+        "--libs=ns,fetchevent",
+        "--watch"
+      ],
       "port": 9229,
       "outputCapture": "std",
-      "preLaunchTask": "deno: lint",
-      "console": "internalConsole"
+      "preLaunchTask": "deno: lint"
     }
   ]
 }

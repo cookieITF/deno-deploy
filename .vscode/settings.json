@@ -1,6 +1,8 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "deno.unstable": false,
-  "deno.config": "./tsconfig.json"
+  "deno.config": "./tsconfig.json",
+  "deno.suggest.imports.hosts": {
+    "https://x.lcas.dev": true
+  }
 }

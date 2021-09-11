@@ -1,0 +1,32 @@
+// You need to import `h` factory function as Deno Deploy
+// uses it instead of `React.createElement`
+import { h } from "https://x.lcas.dev/preact@10.5.12/mod.js";
+import { renderToString } from "https://x.lcas.dev/preact@10.5.12/ssr.js";
+
+import { useEffect, useState } from "https://jspm.dev/react@17.0.2";
+
+function App() {
+  const date = new Date();
+  return (
+    <html>
+      <head>
+        <title>Hello from JSX</title>
+      </head>
+      <body>
+        <h1>Hello world</h1>
+        <div>
+          {date.toLocaleDateString()}
+        </div>
+      </body>
+    </html>
+  );
+}
+
+addEventListener("fetch", (event) => {
+  // renderToString generates html string from JSX components.
+  const response = new Response(renderToString(<App />), {
+    headers: { "content-type": "text/html; charset=utf-8" },
+  });
+
+  event.respondWith(response);
+});
