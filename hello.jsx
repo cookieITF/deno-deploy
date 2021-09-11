@@ -19,7 +19,7 @@ function App() {
 addEventListener("fetch", (event) => {
   // renderToString generates html string from JSX components.
   const response = new Response(renderToString(<App />), {
-    headers: { "content-type": "text/html; charset=utf-8" },
+    headers: { "content-type": "text/html; charset=uft-8" },
   });
 
   event.respondWith(response);
